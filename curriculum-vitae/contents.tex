@@ -1,0 +1,634 @@
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+
+\moderncvcolor{burgundy}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+% \usepackage{CJKutf8} % Type in Chinese with ctex CJK
+
+\RequirePackage{filecontents}
+\begin{filecontents*}{moderncvcolorburgundy.sty}
+%% start of file `moderncvcolorburgundy.sty'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+%-------------------------------------------------------------------------------
+%                identification
+%-------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moderncvcolorburgundy}[2013/02/09 v1.3.0 modern curriculum vitae and letter color scheme: burgundy]
+
+%-------------------------------------------------------------------------------
+%                color scheme definition
+%-------------------------------------------------------------------------------
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.02745098, 0.12941176, 0.26666667}% burgundy
+%\definecolor{color1}{rgb}{0.2,0.2,0.2}% Testcolor
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+\endinput
+%% end of file `moderncvcolorburgundy.sty'.
+\end{filecontents*}
+
+\usepackage{textcomp} % The package supports the Text Companion fonts, which provide many text symbols (such as baht, bullet, copyright, musicalnote, onequarter, section, and yen), in the TS1 encoding.
+
+% adjust the page margins
+\usepackage{latexsym}
+\usepackage[scale=0.8,margin=0.89in]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{soul}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% \chead{Yuhang Song (\yourprogram ~applicant for Fall---2018), ID: YuhangSong2017@gmail.com}
+% \chead{Curriculum Vitae/Resume | Yuhang Song | Computer Science \& Engineering Ph.D} % U of Michigan
+% \rhead{Account: YuhangSong2017@gmail.com}
+
+\definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
+%\newcommand{\yourprogram}{PhD CS}
+
+% personal data
+\name{\lan{Yuhang}{宋}}{\lan{Song}{宇航}}
+% \title{\lan{Curriculum Vitae\&Website}{简历\&个人主页}}                          % optional, remove / comment the line if not wanted
+
+\address{\lan{University of Oxford, U.K.}{牛津大学，英国}} % optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+
+\phone[mobile]{\lan{+44~~7427~657141}{+86~~130~2007~5391}}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% \homepage{sites.google.com/view/yuhangsong}
+\homepage{scholar.google.com/citations?user=cyd3EsgAAAAJ}  % optional, remove / comment the line if not wanted
+% \email{YuhangSong.China@gmail.com}
+% \email{YuhangSong.China@gmail.com}                               % optional, remove / comment the line if not wanted
+\email{Yuhang.Song@some.ox.ac.uk}                               % optional, remove / comment the line if not wanted
+\social[github]{YuhangSong}                              % optional, remove / comment the line if not wanted
+% \social[linkedin]{Yuhang.Song}                        % optional, remove / comment the line if not wanted
+% \social[twitter]{YuhangSongChina}                             % optional, remove / comment the line if not wanted
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+
+\photo[75pt][0.0pt]{ox-logo.png} % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+\newcounter{custom}
+\renewcommand*{\thecustom}{\arabic{custom}}
+% \renewcommand*{\thecustom}{
+%     \textrm{
+%         \ifnum\value{custom}<1000 0\fi
+%         \ifnum\value{custom}<100 0\fi
+%         \ifnum\value{custom}<10 0\fi
+%         \arabic{custom}
+%     }
+% }
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+
+% Yuhang Song is a fourth-year DPhil (Ph.D.) student in Computer Science & Nuffield Clinical Neurosciences at the University of Oxford, working with Prof. Thomas Lukasiewicz and Prof. Rafal Bogacz at Intelligent Systems group and Models of Brain Decision Networks group.
+
+% Yuhang’s research focuses on deciphering and extracting the learning principles of biological neural systems, so as to reverse-engineer them as algorithms or even specialized hardware. Such a route of research would, on the one hand, bring us one step closer to true artificial intelligence that facilitates our daily life, and, on the other hand, improve our understanding of the most sophisticated part of our body, the brain, so that diseases related to learning, and broadly, to neural systems, can be better understood and treated.
+
+% Yuhang received his Bachelor of Science degree in Electronic Information Engineering from Beihang University. 
+% He made it to the men's second team in the badminton squad of the University of Oxford, and he enjoys the competitive matches and training there.
+
+\begin{document}
+% \begin{CJK*}{UTF8}{gbsn} % Type in Chinese with ctex CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace{-3.0em}
+
+\newcommand{\txlink}[2]{\href{#2}{#1}}
+
+\newcommand{\brlink}[2]{\txlink{\textcolor{brown}{#1}}{#2}}
+
+\newcommand{\itlink}[2]{\txlink{\textit{#1}}{#2}}
+
+\newcommand{\ullink}[2]{\txlink{\underline{#1}}{#2}}
+
+\newcommand{\brullink}[2]{\ullink{\textcolor{brown}{#1}}{#2}}
+
+\newcommand{\ulitlink}[2]{\itlink{\underline{#1}}{#2}}
+
+\newcommand{\OxUni}{\ulitlink{\lan{University of Oxford}{牛津大学}}{https://www.ox.ac.uk/}}
+
+\newcommand{\BrUni}{\ulitlink{\lan{Brown University}{布朗大学}}{https://www.brown.edu/}}
+
+\newcommand{\BhUni}{\ulitlink{\lan{Beihang University}{北京航空航天大学}}{https://ev.buaa.edu.cn/}}
+
+\newcommand{\CsOxUni}{\ulitlink{\lan{Department of Computer Science}{计算机科学系}}{https://www.cs.ox.ac.uk/}}
+
+\newcommand{\NdcnOxUni}{\ulitlink{\lan{Nuffield Department of Clinical Neurosciences}{纳菲尔德临床神经科学系}}{https://www.ndcn.ox.ac.uk/}}
+
+\newcommand{\CsBrUni}{\ulitlink{\lan{Department of Computer Science}{计算机科学系}}{https://cs.brown.edu/}}
+
+\newcommand{\EeBhUni}{\lan{Electronic Information Engineering}{电子信息工程系}}
+
+\newcommand{\US}{\lan{U.S.}{美国}}
+
+\newcommand{\UK}{\lan{U.K.}{英国}}
+
+\newcommand{\CN}{\lan{C.N.}{中国}}
+
+% \section{\lan{RESEARCH VISION}{研究方向}}
+    
+\lan{
+    My research is to decipher and extract the learning principles of biological neural systems, so as to reverse-engineer them as algorithms or even specialized hardware. Such a route of research would, on the one hand, bring us one step closer to true artificial intelligence, and, on the other hand, improve our understanding of the most sophisticated part of our body, the brain, so that diseases related to learning, and broadly, to neural systems, can be better understood and treated.
+}{
+    我的研究是破译和提取生物神经系统的学习原理，并将其逆向工程为机器智能的算法，甚至专用硬件。这样的研究，一方面让我们创造强人工智能；另一方面，让我们理解人体最复杂的器官，大脑，以至于更好地揭秘，甚至治疗，与神经系统相关的疾病。
+}
+
+% \footnote{\href{http://www.cs.ox.ac.uk/people/thomas.lukasiewicz/isg-index.html}{Prof. Benjamin Grewe} shares such similar research vision as mine and write it in his website in such a concise way that I cannot resist myself from borrowing some in writing mine. I by no means to be offensive, but to be respectful.}
+
+\section{\lan{BIOGRAPHY}{教育}}
+
+    \cventry{Feb. 2022 -- }{\lan{JP Morgan AI Research Fellow}{摩根大通人工智能学者}}{}{\OxUni{}}{}{}
+
+    % Thesis submitted at: 27 Oct 2021
+    \cventry{Oct. 2018 -- }{\lan{Ph.D.}{博士}}{\CsOxUni{} \& \NdcnOxUni{}}{\OxUni{}}{}{
+    	\begin{itemize}
+    		\item \lan{Groups}{研究组}:
+    		\begin{itemize}
+    		    \item \ulitlink{\lan{Models of Brain Decision Networks}{人脑决策网络研究组}}{https://www.mrcbndu.ox.ac.uk/groups/bogacz-group} @ \ulitlink{\lan{MRC Brain Network Dynamics Unit}{基础医学研究基金-人脑动态模型研究中心}}{https://www.mrcbndu.ox.ac.uk/}
+    			\item \ulitlink{\lan{Intelligent Systems}{智能系统研究组}}{https://www.cs.ox.ac.uk/people/thomas.lukasiewicz/} @ \ulitlink{\lan{Oxford AIML}{牛津大学人工智能与机器学习研究中心}}{https://www.cs.ox.ac.uk/research/ai_ml/}
+    		\end{itemize}
+    		% \item Topics:
+    		% \begin{itemize}
+    		% 	\item \textit{Computational Neuroscience and Reinforcement Learning}
+    		% \end{itemize}
+    		% \item Supervisors:
+    		% \begin{itemize}
+    		% 	\item \textit{Prof. Rafal Bogacz} % \href{https://scholar.google.com/citations?user=m02-44gAAAAJ&hl=en}{{(\textcolor{brown}{\underline{\textit{See Scholar Page}}})}};
+    		% 	\item \textit{Prof. Thomas Lukasiewicz} \href{http://scholar.google.co.uk/citations?hl=en&user=arjucpEAAAAJ&pagesize=100&view_op=list_works}{{(\textcolor{brown}{\underline{\textit{See Scholar Page}}})}}
+    		% \end{itemize}
+    	\end{itemize}
+    }
+    
+    \cventry{Jun. 2017 -- Apr. 2018}{\lan{Research Assistant}{研究助理}}{\CsBrUni{}}{\BrUni{}}{\US{}}{
+        \begin{itemize}
+        	\item \lan{Groups}{研究组}:
+        	\begin{itemize}
+        		\item \ulitlink{\lan{Humanity-Centered Robotics Initiative}{人本位机器人研究中心}}{https://hcri.brown.edu/}
+        	\end{itemize}
+    	    % \item Topics:
+    	    %     \begin{itemize}
+    	    %         \item \textit{Reinforcement Learning, Generative Adversarial Learning}
+    	    %     \end{itemize}
+    	    % \item Advisor:
+    	    %     \begin{itemize}
+    	    %         \item \textit{Prof. Michael Littman} \href{https://scholar.google.com/citations?user=Jj00ksMAAAAJ}{{(\textcolor{brown}{\underline{\textit{See Scholar Page}}})}}
+    	    %     \end{itemize}
+        \end{itemize}}
+    
+    % Dept. of 
+    \cventry{Sep. 2014 -- Jul. 2018}{\lan{B.S.}{本科}}{\EeBhUni{}}{\BhUni{}}{}{
+        \begin{itemize}
+    	    \item \lan{GPA}{绩点}: 3.71/4.0
+            % \item Group:
+            % \begin{itemize}
+            % 	\item \textit{Multimedia Computing Towards Communications} \href{http://45.77.201.133/index.html}{{(\textcolor{brown}{\underline{\textit{See Home Page}}})}}
+            % \end{itemize}
+            % \item Topics:
+            %     \begin{itemize}
+            %         \item \textit{Reinforcement Learning, Computer Vision}
+            %     \end{itemize}
+            % \item Advisor:
+            %     \begin{itemize}
+            %         \item \textit{Prof. Mai Xu} \href{https://scholar.google.com/citations?user=JdhDuXAAAAAJ&hl=en}{{(\textcolor{brown}{\underline{\textit{See Scholar Page}}})}}
+            %     \end{itemize}
+        \end{itemize}
+    }
+
+    \subsection{\lan{Fellowships / Scholarships / Nominations}{研究基金 / 奖学金 / 提名}}
+    
+        \newcommand{\Fellowship}[3]{
+            \cvitemwithcomment{#1}{#2}{\textbf{#3}}
+        }
+        \newcommand{\FellowshipAmong}[5]{
+            \Fellowship{#1}{#2~|~\footnotesize{\textbf{\textit{\lan{}{授予}#4\lan{}{名}~\lan{among}{于总计}~#5\lan{}{名}}}}}{#3}
+        }
+        
+        \Fellowship{2022}{\ulitlink{\lan{JP Morgan AI Research Fellowship}{摩根大通人工智能研究奖}}{https://www.jpmorgan.com/technology/artificial-intelligence/research-awards}}{\lan{\$100,000}{\textyen630,000} | \lan{A total of 13-15 awardees worldwide}{每年全球授予13到15位学者}}
+        
+        \Fellowship{2021}{\lan{Nominated for}{提名} \ulitlink{\lan{JP Morgan AI Research Fellowship}{摩根大通人工智能研究奖}}{https://www.jpmorgan.com/technology/artificial-intelligence/research-awards}}{\lan{Three nominees in Oxford Uni.}{每年牛津大学提名三位}}
+        
+        \Fellowship{2019, 2020}{\lan{Nominated for}{提名} \ulitlink{\lan{Google AI Research Fellowship}{谷歌人工智能研究奖}}{https://research.google/outreach/phd-fellowship/}}{\lan{Two nominees in Oxford Uni.}{每年牛津大学提名两位}}
+        
+        \Fellowship{2019}{\ulitlink{\lan{Special Project Grant}{特别海外项目基金}}{https://www.some.ox.ac.uk/funding-and-opportunities/awards-for-travel-projects-internships-and-personal-development/travel-special-project-grants-pg/} @ \ulitlink{\lan{Somerville College}{萨默维尔学院}}{https://www.some.ox.ac.uk/}}{\lan{\pounds2,000}{\textyen17,000} | \lan{Top-tier}{}}
+        
+        \FellowshipAmong{2018}{\ulitlink{\lan{State Scholarship of China}{国家公派留学奖学金}}{https://www.ox.ac.uk/students/fees-funding/international/scholarships-exchanges/chinese}}{\lan{\$220,000}{\textyen1400,000} | \lan{Top-tier}{全额奖学金}}{150}{53,000}
+        % \cvitemwithcomment{}{\textit{~~~~Note that this is NOT an industry award.}}{}
+        
+        \FellowshipAmong{2018}{\ulitlink{\lan{Honorary China Oxford Award}{荣誉中国牛津奖学金}}{https://chinaoxford.org/}}{\lan{\pounds3,000}{\textyen26,000} |\lan{1st Prize}{一等奖}}{15}{1,000}
+        
+        \FellowshipAmong{2017}{\ulitlink{\lan{National Innovation Scholarship}{工信部国家创新创业奖学金}}{http://www.miitg7.org.cn/_upload/article/files/c3/e0/15335181475c9130fbe65cd5c46c/fd773a7c-46cd-4bc2-a6a2-e913deb336a2.pdf}}{\lan{\$12,000}{\textyen80,000} | \lan{1st Prize}{一等奖}}{20}{200,000+}
+        \cvitemwithcomment{}{\textit{~~~~\lan{Of highest amount among all scholarships awarded to undergraduate in China.}{中国本科单笔金额最高奖学金}}}{}
+        \cvitemwithcomment{}{\textit{~~~~\lan{Awarded directly by the National Ministry of Industry and Information.}{由国家工业和信息化部直接授予}}}{}
+        
+        \FellowshipAmong{2016}{\lan{Outstanding Science and Technology Scholarship}{科技创新实践奖学金}}{\lan{\$220}{\textyen1,500} |\lan{1st Prize}{一等奖}}{12}{256}
+        
+        \FellowshipAmong{2015}{\ulitlink{\lan{Airbus Academic Scholarship}{空客学术奖学金}}{https://www.budgetdubs.com/info/1006/26325.htm}}{\lan{\$1,200}{\textyen7,500} |\lan{2nd Prize}{二等奖}}{2}{600+}
+
+% \newpage
+
+\section{\lan{PUBLICATIONS}{发表论文}{\small \textcolor{black}{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~($*$: \lan{Corresponding Author.}{通讯作者} \small $\dag$: \lan{Co-first author.}{共同第一作者})}}}
+
+    \newcommand{\LabeledPaper}[5]{
+        \cvitem{} {
+            [\refstepcounter{custom}\thecustom] #4 {#1. \emph{#2} \textcolor{darkgray}{\textbf{#3}}. \brlink{\lan{[Link]}{「链接」}}{#5}}
+    	}
+    }
+
+    \newcommand{\Preprint}[4]{
+        \LabeledPaper{#1}{#2}{\lan{In submission/Under review at #3}{#3在审}}{\colorbox{pink}{\lan{Pre-print}{在审}}}{#4}
+    }
+    
+    \newcommand{\Conference}[4]{
+        \LabeledPaper{#1}{#2}{#3}{\colorbox{lime}{\lan{Conference}{会议}}}{#4}
+    }
+    
+    \newcommand{\Workshop}[4]{
+        \LabeledPaper{#1}{#2}{#3}{\colorbox{lightgray}{\lan{Workshop}{研讨会}}}{#4}
+    }
+    
+    \newcommand{\Journal}[4]{
+        \LabeledPaper{#1}{#2}{#3}{\colorbox{lime}{\lan{Journal}{期刊}}}{#4}
+    }
+    
+    \newcommand{\TechnicalReport}[4]{
+        \LabeledPaper{#1}{#2}{#3}{\colorbox{lightgray}{\lan{Technical report}{技术报告}}}{#4}
+    }
+
+    \Preprint
+    {\textbf{Yuhang Song$^*$},
+    Beren Millidge,
+    Tommaso Salvatori,
+    Zhenghua Xu,
+    Thomas Lukasiewicz$^*$, 
+    Rafal Bogacz$^*$}
+    {Prospective Configuration: Biological Learning beyond Backpropagation.}
+    {Nature}
+    {}
+    % \lan{}{（影响因子：49.96）}
+    
+    \Preprint
+    {\textbf{Yuhang Song$^*$}, 
+    Tommaso Salvatori$^\dag$,
+    Beren Millidge,
+    Rafal Bogacz,
+    Thomas Lukasiewicz}
+    {Parallel Predictive Coding: A Biologically Inspired Learning Algorithm.}
+    {ICML 2022}
+    {}
+    
+    \Preprint
+    {Beren Millidge,
+    Tommaso Salvatori,
+    \textbf{Yuhang Song$^*$}, 
+    Thomas Lukasiewicz,
+    Rafal Bogacz}
+    {Universal Hopfield Networks: A General Framework for Single-Shot Associative Memory Models.}
+    {ICML 2022}
+    {}
+    
+    \Preprint
+    {Tommaso Salvatori,
+    Luca Pinchetti$^\dag$,
+    Beren Millidge,
+    \textbf{Yuhang Song$^*$},
+    Tianyi Bao,
+    Rafal Bogacz,
+    Thomas Lukasiewicz}
+    {Learning on Arbitrary Graph Topologies via Predictive Coding.}
+    {ICML 2022}
+    {}
+	
+	\Conference
+	{Tommaso Salvatori,
+    \textbf{Yuhang Song}$^{*}$,
+    Zhenghua Xu,
+    Thomas Lukasiewicz, 
+    Rafal Bogacz}
+    {Reverse Differentiation via Predictive Coding.}
+    {AAAI 2022}
+    {}
+    
+    \Conference
+    {Tommaso Salvatori,
+    \textbf{Yuhang Song}$^{*}$, 
+    Yujian Hong,
+    Lei Sha,
+    Simon Frieder,
+    Zhenghua Xu,
+    Rafal Bogacz, 
+    Thomas Lukasiewicz}
+    {Associative Memory via Predictive Coding.}
+    {NeurIPS 2021}
+    {https://proceedings.neurips.cc/paper/2021/file/1fb36c4ccf88f7e67ead155496f02338-Paper.pdf}
+    
+    \Conference
+    {\textbf{Yuhang Song}, 
+    Thomas Lukasiewicz, 
+    Zhenghua Xu$^*$, 
+    Rafal Bogacz}
+    {Can the Brain Do Backpropagation? --Exact Implementation of Backpropagation in Predictive Coding Networks.}
+    {NeurIPS 2020}
+    {https://proceedings.nips.cc/paper/2020/file/fec87a37cdeec1c6ecf8181c0aa2d3bf-Paper.pdf}
+    
+    \Conference
+    {\textbf{Yuhang Song}, 
+    Andrzej Wojcicki, 
+    Thomas Lukasiewicz, 
+    Jianyi Wang, 
+    Abi Aryan, 
+    Zhenghua Xu$^*$, 
+    Mai Xu, 
+    Zihan Ding, 
+    Lianlong Wu1}
+    {Arena: A General Evaluation Platform and Building Toolkit for Multi-Agent Intelligence.}
+    {AAAI 2020}
+    {https://ojs.aaai.org/index.php/AAAI/article/view/6216/6072}
+    % \href{https://sites.google.com/view/arena-unity/}{{(\textcolor{brown}{\underline{\textit{Project Home Page}}})}}
+	% \href{https://docs.google.com/presentation/d/1OtsUg0Z67gEeQ-BwROhUEK5dWOMziHusgZxqeNI827A/edit?usp=sharing}{{(\textcolor{brown}{\underline{\textit{Slides}}})}}
+	% \href{https://arxiv.org/abs/1905.08085}{{(\textcolor{brown}{\underline{\textit{Paper \& Supplementary Material}}})}}
+	% \href{https://github.com/YuhangSong/Arena-Baselines}{{(\textcolor{brown}{\underline{\textit{Code Release: Baselines}}})}}
+	% \href{https://github.com/YuhangSong/Arena-BuildingToolkit}{{(\textcolor{brown}{\underline{\textit{Code Release: BuildingToolkit}}})}}
+    
+    \Conference
+    {\textbf{Yuhang Song}, 
+    Jianyi Wang, 
+    Thomas Lukasiewicz, 
+    Zhenghua Xu$^*$, 
+    Shangtong Zhang, 
+    Andrzej Wojcicki, 
+    Mai Xu}
+    {Mega-Reward: Achieving Human-Level Play without Extrinsic Rewards.}
+    {AAAI 2020}
+    {https://ojs.aaai.org/index.php/AAAI/article/view/6040/5896}
+    % \textcolor{asparagus}{\textbf{Spotlight\&Poster Presentation.}}
+    % \href{https://docs.google.com/presentation/d/1iKJ2pYA1oJcQ4SKfzO5k_2Ja0lNY1yA5uKSw4xnv8GI/edit?usp=sharing}{{(\textcolor{brown}{\underline{\textit{Slides}}})}}
+	% \href{https://arxiv.org/abs/1905.04640}{{(\textcolor{brown}{\underline{\textit{Paper \& Supplementary Material}}})}}
+	% \href{https://github.com/YuhangSong/Mega-Reward}{{(\textcolor{brown}{\underline{\textit{Code Release}}})}}
+    
+    \Conference
+    {\textbf{Yuhang Song}, 
+    Jianyi Wang$^\dag$,
+    Thomas Lukasiewicz,
+    Zhenghua Xu$^*$, 
+    Mai Xu}
+    {Diversity-Driven Extensible Hierarchical Reinforcement Learning.}
+    {AAAI 2019}
+    {https://ojs.aaai.org/index.php/AAAI/article/view/4430/4308}
+    % \textcolor{asparagus}{\textbf{Oral Presentation.}}
+    % \href{https://docs.google.com/presentation/d/18olkElCpJoE0iPnyS6DpE8zH8I3mggcCvcWI5yJDJkI/edit?usp=sharing}{{(\textcolor{brown}{\underline{\textit{Slides}}})}} 
+	% \href{https://arxiv.org/abs/1811.04324}{{(\textcolor{brown}{\underline{\textit{Paper \& Supplementary Material}}})}}
+	% \href{https://github.com/YuhangSong/DEHRL}{{(\textcolor{brown}{\underline{\textit{Code Release}}})}}
+	
+	\Journal
+	{Mai Xu$^*$, 
+    \textbf{Yuhang Song}$^\dag$,
+    Jianyi Wang, 
+    Minglang Qiao, 
+    Liangyu Huo,
+    Zulin Wang}
+    {Predicting Head Movement in Panoramic Video: A Deep Reinforcement Learning Approach.}
+    {TPAMI, \lan{Impact Factor: }{影响因子：}17.861}
+    {https://arxiv.org/abs/1710.10755}
+    % IEEE Transactions on Pattern Analysis and Machine Intelligence (), Impact Factor: 17.861.
+	% \href{https://github.com/YuhangSong/DHP}{{(\textcolor{brown}{\underline{\textit{Code Release}}})}}
+	
+    \Conference
+    {Xin Deng, 
+    Hao Wang$^\dag$, 
+    Mai Xu$^*$, 
+    Yichen Guo, 
+    \textbf{Yuhang Song},
+    Li Yang}
+    {LAU-Net: Latitude Adaptive Upscaling Network for Omnidirectional ImageSuper-resolution.}
+    {CVPR 2021}
+    {https://openaccess.thecvf.com/content/CVPR2021/papers/Deng_LAU-Net_Latitude_Adaptive_Upscaling_Network_for_Omnidirectional_Image_Super-Resolution_CVPR_2021_paper.pdf}
+    
+    \Conference
+    {Jianyi Wang, 
+    Xin Deng, 
+    Mai Xu$^*$, 
+    Congyong Chen, 
+    \textbf{Yuhang Song}}
+    {Multi-level Wavelet-based Generative Adversarial Network for Perceptual Quality Enhancement of Compressed Video.}
+    {ECCV 2020}
+    {https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9615054}
+    
+    \Journal
+    {Jianyi Wang, 
+    Mai Xu$^*$, 
+    Lai Jiang, 
+    \textbf{Yuhang Song}}
+    {Attention-based Deep Reinforcement Learning for Virtual Cinematography of 360$^{\circ}$ Videos.}
+    {TMM, Impact Factor: 5.452}
+    {https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9186833}
+    % IEEE Transactions on Multimedia (TMM), Impact Factor: 5.452.
+
+    \Workshop
+    {\textbf{Yuhang Song}, 
+    Mai Xu$^*$, 
+    Songyang Zhang,
+    Liangyu Huo}
+    {Generalization Tower Network: A Novel Deep Neural Network Architecture for Multi-Task Learning.}
+    {Deep Reinforcement Learning Symposium at NeurIPS 2018}
+    {https://arxiv.org/abs/1710.10036}
+    % \href{https://github.com/YuhangSong/GTN}{{(\textcolor{brown}{\underline{\textit{Code Release}}})}}
+        
+    \Conference
+    {\textbf{Yuhang Song}, 
+    Mai Xu$^*$, 
+    Shengxi Li}
+    {Watching Videos with Certain and Constant Quality: PID-based Quality Control Method.}
+    {DCC 2017}
+    {https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7923744}
+    % \href{https://github.com/YuhangSong/PQC}{{(\textcolor{brown}{\underline{\textit{Code Release}}})}}
+    
+    \Journal
+    {Liangyu Huo, 
+    Zulin Wang, 
+    Mai Xu$^*$, 
+    \textbf{Yuhang Song}}
+    {Learning Diverse Sub-Policies via a Task-Agnostic Regularization on Action Distributions.}
+    {ICASSP 2020}
+    {https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9053393}
+
+    \TechnicalReport
+    {\textbf{Yuhang Song}, 
+    Christopher Grimm, 
+    Xianming Wang, 
+    Michael Littman$^*$}
+    {Learning Approximate Stochastic Transition Models.}
+    {2018}
+    {https://arxiv.org/abs/1710.09718}
+    % \href{https://github.com/YuhangSong/SGAN}{{(\textcolor{brown}{\underline{\textit{Code Release}}})}}
+        
+    \TechnicalReport
+    {Hao Sun, 
+    Ziping Xu, 
+    \textbf{Yuhang Song}, 
+    Meng Fang, 
+    Jiechao Xiong, 
+    Bo Dai, 
+    Zhengyou Zhang, 
+    Bolei Zhou}
+    {Supervised Q-Learning for Continuous Control.}
+    {2021}
+    {https://arxiv.org/abs/2006.06600}
+        
+    \TechnicalReport
+    {Christopher Grimm, 
+    \textbf{Yuhang Song}, 
+    Michael Littman$^*$}
+    {Summable Reparameterizations of Wasserstein Critics in the One-Dimensional Setting.}
+    {2018}
+    {https://arxiv.org/abs/1709.06533}
+
+\section{\lan{Patents}{专利}}
+    
+    \cvitem{} {
+        [\refstepcounter{custom}\thecustom,..\setcounter{custom}{
+        \value{custom}+6}.,\refstepcounter{custom}\thecustom] {
+            \textbf{Yuhang Song}, 
+            Xianglong Kong.
+            % Jianyi Wang. 
+            \emph{
+                A Power / Joint / Servo / Connector Module Device in a Modular UAV System.
+            }
+            4 Invention \& 4 Utility Model Patents.
+            ZL201620302692.X, 
+            ZL201620302142.8, 
+            ZL201620302048.2, 
+            ZL201620302137.7, 
+            201610224780.7, 
+            201610225217.1, 
+            201610225216.7, 
+            201610224853.2.
+        }
+    }
+
+\section{\lan{HONORS}{荣誉} \& \lan{AWARDS}{获奖}}
+
+\newcommand{\AwardAmong}[5]{\FellowshipAmong{#1}{#2}{#3}{#4}{#5}}
+
+\cvitemwithcomment{}{\textbf{\lan{The most representative 4 honors:}{最具代表性的4项荣誉：}}}{}
+
+\AwardAmong{2016}{\ulitlink{\lan{Challenge Cup National Innovation Contest}{“挑战杯”全国大学生学术科技作品竞赛}}{http://www.tiaozhanbei.net/}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{9}{60,000}
+\vspace{-0.3em}
+\cvitemwithcomment{}{\textit{\lan{The \textbf{top} entrepreneurship competition in China;}{全国\textbf{顶级}学术科技作品竞赛；}}}{}
+\vspace{-0.3em}
+\cvitemwithcomment{}{\textit{\lan{\textbf{Directly} obtain graduate admission privilege to our university for this honor;}{此荣誉在北京航空航天大学被授予\textbf{推免保送研究生}（仅第一作者）}}}{}
+
+\AwardAmong{2017}{\ulitlink{\lan{The 22th "Fengru Cup" Academic Contest}{第22届“冯如杯”学术科技作品竞赛}}{http://www.tiaozhanbei.net/}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{15}{4,600}
+\vspace{-0.3em}
+\cvitemwithcomment{}{\textit{\lan{The \textbf{top} academic competition in our university;}{{北京航空航天大学\textbf{顶级}学术科技作品竞赛；}}}}{}
+\vspace{-0.3em}
+\cvitemwithcomment{}{\textit{\lan{\textbf{Directly} obtain graduate admission privilege to our university for this honor;}{此荣誉在北京航空航天大学被授予\textbf{推免保送研究生}（仅第一作者）}}}{}
+
+\AwardAmong{2016}{\ulitlink{\lan{The 21th "Fengru Cup" Innovation Contest}{第21届“冯如杯”学术科技作品竞赛}}{http://www.tiaozhanbei.net/}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{16}{4,500}
+\vspace{-0.3em}
+\cvitemwithcomment{}{\textit{\lan{The \textbf{top} academic competition in our university;}{{北京航空航天大学\textbf{顶级}学术科技作品竞赛；}}}}{}
+\vspace{-0.3em}
+\cvitemwithcomment{}{\textit{\lan{\textbf{Directly} obtain graduate admission privilege to our university for this honor;}{此荣誉在北京航空航天大学被授予\textbf{推免保送研究生}（仅第一作者）}}}{}
+
+\AwardAmong{2016}{\ulitlink{\lan{National Information Technology Contest}{“蓝桥杯”全国软件和信息技术大赛}}{https://dasai.lanqiao.cn/}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{89}{13,000}
+
+\cvitemwithcomment{}{\textbf{\lan{Other 9 awards, including:}{其他9个奖项，包括：}}}{}
+
+\AwardAmong{2016}{\ulitlink{\lan{The 21th ``Fengru Cup'' Nokia Contest}{第21届“冯如杯”诺基亚“互联世界”专项竞赛}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{9}{120+}
+
+\AwardAmong{2016}{\ulitlink{\lan{The 21th ``Fengru Cup'' Entrepreneurship Contest}{第21届“冯如杯”创业竞赛}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{6}{1100}
+
+\AwardAmong{2016}{\ulitlink{\lan{China Aviation Industry Innovation Contest}{中国航空工业创新大赛}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{1}{1200}
+
+\AwardAmong{2016}{\ulitlink{\lan{Beihang Electronic Innovation Contest}{北京航空航天大学电子创新竞赛}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{1}{240}
+
+\AwardAmong{2016}{\ulitlink{\lan{Top Comprehensive Performance in Department}{北京航空航天大学电子信息工程系“启明之星”}}{}}{\textbf{}}{1}{256}
+
+\AwardAmong{2015}{\ulitlink{\lan{Beihang Electronic Innovation Contest}{北京航空航天大学电子创新竞赛}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{1}{240}
+
+\AwardAmong{2015}{\ulitlink{\lan{Top Innovation Performance in the Department}{北京航空航天大学科技实践奖}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{1}{256}
+
+\AwardAmong{2014}{\ulitlink{\lan{Beihang Electronic Innovation Contest}{北京航空航天大学电子创新竞赛}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{1}{240}
+
+\AwardAmong{2014}{\ulitlink{\lan{Top Innovation Performance in the Department}{北京航空航天大学科技实践奖}}{}}{\textbf{\lan{1st Author}{第一作者} \& \lan{1st Prize}{一等奖}}}{1}{256}
+
+\section{\lan{PROJECTS}{科技作品}}
+
+\cvitemwithcomment{2014 -- 2016}{\textbf{\lan{iDrone: A Modular Reconfigurable Drone System}{iDrone：模块化可重构无人机系统}} (\brullink{\lan{See video}{观看视频}}{https://youtu.be/M_J1gOgMk8I})}{\textbf{\lan{1st Author}{第一作者}}}
+% \cventry{}{{\textmd{
+%     ~~~~I spent two years focusing on this project, from innovating the original idea to designing the basic model. Eventually, I built a team of 10 members from diverse backgrounds which we worked together through the project. Although we decided not to accept venture investment from a few companies, yet it represents the outstanding level of our product}}}{}{}{}{}
+
+\cvitemwithcomment{2014 -- 2015}{\textbf{\lan{MFR: A Somatosensory Equipment for Shooting Games}{MFR：一个射击游戏的体感设备}} (\brullink{\lan{See video}{观看视频}}{https://youtu.be/FMKjrAvf7Ks})}{\textbf{\lan{1st Author}{第一作者}}}
+% \cventry{}{{\textmd{
+%     ~~~~A really cool project aiming at developing more natural human-computer interface for first-person shooter game. I spend my freshman year in this project}}}{}{}{}{}
+
+\section{\lan{TEACHING}{教学} {\small \textcolor{black}{}}}
+
+\cventry{2019}{\ullink{\lan{Advanced Machine Learning}{高级机器学习}}{https://www.cs.ox.ac.uk/teaching/courses/2018-2019/advml/}}{\CsOxUni{}}{\OxUni{}}{}{
+	\begin{itemize}
+		\item \lan{Role}{职务}: \lan{Teaching Assistant \& Tutor}{助教}
+		\item \lan{Lecturers:}{讲师：}
+		\begin{itemize}
+			\item \ulitlink{\lan{Prof. Yarin Gal}{Yarin Gal教授}}{http://www.cs.ox.ac.uk/people/yarin.gal/website/}
+			\item \ulitlink{\lan{Prof. Thomas Lukasiewicz}{Thomas Lukasiewicz教授}}{https://www.cs.ox.ac.uk/people/thomas.lukasiewicz/}
+		\end{itemize}
+    \end{itemize}
+}
+
+\cventry{2019}{\ullink{\lan{Imperative Programming}{命令式编程} 3}{https://www.cs.ox.ac.uk/teaching/courses/2017-2018/imperativeprogramming3/}}{\CsOxUni{}}{\OxUni{}}{}{
+	\begin{itemize}
+		\item \lan{Role}{职务}: \lan{Teaching Assistant \& Tutor}{助教}
+		\item \lan{Lecturers:}{讲师：}
+		\begin{itemize}
+			\item \ulitlink{\lan{Prof. Peter Jeavons}{Peter Jeavons教授}}{https://www.cs.ox.ac.uk/people/peter.jeavons/}
+		\end{itemize}
+    \end{itemize}
+}
+
+\cventry{2018}{\lan{Introduction to Machine Learning}{机器学习简介}}{}{\BhUni{}}{}{
+	\begin{itemize}
+		\item \lan{Role}{职务}: \lan{Teaching Assistant \& Tutor}{助教}
+		\item \lan{Lecturers:}{讲师：}
+		\begin{itemize}
+			\item \ulitlink{\lan{Prof. Mai Xu}{徐迈教授}}{https://scholar.google.com/citations?user=JdhDuXAAAAAJ&hl=en}
+		\end{itemize}
+    \end{itemize}
+}
+
+% \section{SOCIAL WORK}
+
+% \cventry{2015 -- 2016}{Deputy Minister of Science and Technology Sector in the department}{}{}{}{}
+
+% \cventry{2014 -- 2016}{Deputy Squad Leader of the department}{}{}{}{}
+
+% \cvitemwithcomment{2013 -- 2014}{\textbf{Elite Program: A Charity Program.}}{\textbf{One of the Sponsors}}
+%\cventry{}{{\textmd{
+%    ~~~~We were then students from the elite class, which spoke of our excellent performance in the National High School Entrance Examination. So, we figured out a charity program which benefits more. Specifically, we provided tutoring service to the students that were going to take that examination. Indeed, what we've earned from it went directly to the funding program for the poor children. We eventually tutored more than 300 students and funded more than 2000. The program received a great deal of attention from the press and was employed and developed by later generations due to its influential social response}}}{}{}{}{}
+
+%\section{Software Skills}
+%\vspace{-0.5em}
+%\cvitem{}{$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$Adept $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$Knowledgably}
+%\cvitem{}{Programming:$~~$ Python, JAVA, Matlab, C, C++, C$\#$ $~~$ HTML}
+%\cvitem{}{Platform:$~~~~~~~~$ Pytorch, TensorFlow $~~~~~~~~~~~~~~~~~~~~~~~$ Caffe, Android, Arduino}
+%\cvitem{}{Doc processing: LaTex, Microsoft Office $~~~~~~~~~~~~~~~~~~~~~~$ Adobe Photoshop and Illustrator}
+
+% \end{CJK*} % Type in Chinese with ctex CJK
+
+\end{document}
